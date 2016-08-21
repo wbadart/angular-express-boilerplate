@@ -1,5 +1,7 @@
 # Angular Express Boilerplate
-A solid springboard for your MEAN app.
+This boilerplate is meant to help you get your MEAN app off the ground fast.
 
 ### Global dependencies
 - gulp
+
+

@@ -9,6 +9,10 @@
 // Constant definitions
 //======================
 
+// Packages
+const mongodb   = require('mongodb');
+let ObjectId    = mongodb.ObjectId, db;
+
 // Prepends all API endpoints (e.g. /test -> /api/v1/test)
 const api_prefix = '/api/v1'
 
@@ -22,12 +26,25 @@ const routes = [
 //=========================
 
 function test(req, res, next){
-    return res.send('Hello world!');
+    db.collection('test', (err, coll)=>{
+        if(err || !coll)
+            return res.status(500).send('Unable to access test collection.');
+        else coll.find().toArray((err, data)=>{
+            if(err || !data.length)
+                return res.status(500).send('No data in test collection.');
+            return res.json(data);
+        });
+    });
 }
 
-//===================
-// Set module export
-//===================
+//===============================
+// DB connect, set module export
+//===============================
+
+mongodb.connect('mongodb://localhost:27017/app', (err, connection)=>{
+    db = connection;
+    console.log('SUCCESSFUL MONGO CONNECTION');
+});
 
 module.exports = routes.map(route=>{
     return {
