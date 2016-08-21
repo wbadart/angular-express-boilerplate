@@ -29,6 +29,7 @@ const del        = require('del');
 const angular = [
     'node_modules/angular/angular.js',
     'node_modules/angular-ui-router/release/angular-ui-router.js',
+    'node_modules/angular-cookies/angular-cookies.js',
     'node_modules/angular-utils-pagination/dirPagination.js'
 ];
 

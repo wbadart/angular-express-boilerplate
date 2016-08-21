@@ -1,3 +1,13 @@
+/**
+* master.controller.js
+*
+* This is the controller of the <html> element, and
+* thus has control over the entire app. At present, its
+* main responsibility is updating the page title on
+* state change.
+*
+*/
+
 (function(){
 'use strict';
 

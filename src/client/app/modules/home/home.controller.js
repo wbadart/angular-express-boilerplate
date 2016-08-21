@@ -1,3 +1,10 @@
+/**
+* home.controller.js
+*
+* Contains the ViewModel of the home (default) state.
+*
+*/
+
 (function(){
 'use strict';
 

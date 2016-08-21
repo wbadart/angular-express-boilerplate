@@ -1,3 +1,11 @@
+/**
+* capitalize.filter.js
+*
+* Takes a string and capitalizes the first letter
+* of each word.
+*
+*/
+
 (function(){
 'use strict';
 
