@@ -18,6 +18,7 @@ const clean      = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const nodemon    = require('gulp-nodemon');
 const watch      = require('gulp-watch');
+const sync       = require('gulp-sync')(gulp).sync;
 const del        = require('del');
 
 //===========
@@ -47,7 +48,7 @@ const sass_paths = [
 // High level tasks
 //==================
 
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task('default', sync(['build', 'serve', 'watch']));
 gulp.task('build', ['compile', 'move']);
 gulp.task('clean', ()=>del(['dist']));
 
