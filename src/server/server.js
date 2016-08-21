@@ -24,7 +24,7 @@ let host = {
 let app = express();
 
 app.use(body_parser.json());
-app.use(logger({path: './server.log.text'}));
+app.use(logger({path: './dist/server/log.txt'}));
 app.use(express.static(path.join(__dirname, '../client'), {maxAge: oneday}));
 app.use(compress());
 
