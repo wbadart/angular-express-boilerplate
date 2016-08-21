@@ -1,9 +1,11 @@
 # Angular Express Boilerplate
-This boilerplate is meant to help you get your MEAN app off the ground fast.  It comes with a robust gulpfile with a series of tasks to make building your app a snap.  Here's a link to MongoDB in case you don't already have it: [https://www.mongodb.com/download-center](https://www.mongodb.com/download-center)
+This boilerplate is meant to help you get your MEAN app off the ground fast.  It comes with a robust gulpfile with a series of tasks to make building your app a snap.
+
+Requires MongoDB: [https://www.mongodb.com/download-center](https://www.mongodb.com/download-center)
 
 ## Quickstart
 
-1. Make sure gulp is installed globally 
+1. Make you have gulp installed globally and that `mongod` is running in the background somewhere.
 
     ```
     npm install -g gulp # may require elevated access (i.e. sudo)
@@ -15,7 +17,7 @@ This boilerplate is meant to help you get your MEAN app off the ground fast.  It
     git clone https://github.com/wbadart/angular-express-boilerplate app &&\
     cd app &&\
     npm install && \
-    gulp
+    npm start
     ```
 
 ## Gulp Tasks
