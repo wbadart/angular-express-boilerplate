@@ -68,7 +68,10 @@ gulp.task('compile:js:server', ()=>{
 });
 
 gulp.task('compile:js:client', ()=>{
-    let pipeline = gulp.src('src/client/**/*.js');
+    let pipeline = gulp.src([
+        'src/client/app/core/app.module.js',
+        'src/client/**/*.js'
+    ]);
     if(process.env.NODE_ENV === 'PROD')
         return pipeline.pipe(babel({presets: ['es2015']}))
             .pipe(uglify())
@@ -92,12 +95,14 @@ gulp.task('compile:js:vendor', ()=>{
 gulp.task('compile:sass', ()=>{
     let pipeline = gulp.src('src/client/assets/**/*.scss');
     if(process.env.NODE_ENV === 'PROD')
-        return pipeline.pipe(sass().on('error', sass.logError))
+        return pipeline.pipe(sass({includePaths: sass_paths})
+                .on('error', sass.logError))
             .pipe(clean({compatibility: 'IE9'}))
             .pipe(gulp.dest('dist/client/assets'));
     else
         return pipeline.pipe(sourcemaps.init())
-            .pipe(sass().on('error', sass.logError))
+            .pipe(sass({includePaths: sass_paths})
+                .on('error', sass.logError))
             .pipe(sourcemaps.write())
             .pipe(gulp.dest('dist/client/assets'));
 });
@@ -106,7 +111,7 @@ gulp.task('compile:sass', ()=>{
 
 gulp.task('move:assets', ()=>{
     gulp.src('node_modules/font-awesome/fonts/**/*')
-        .pipe('dist/client/assets/fonts');
+        .pipe(gulp.dest('dist/client/assets/fonts'));
     return gulp.src(
         ['!src/client/assets/**/*.scss', 'src/client/assets/**/*'])
         .pipe(gulp.dest('dist/client/assets'));

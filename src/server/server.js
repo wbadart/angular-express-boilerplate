@@ -8,6 +8,7 @@
 const path        = require('path');
 const express     = require('express');
 const logger      = require('express-logger');
+const compress    = require('compression');
 const body_parser = require('body-parser');
 const colors      = require('colors');
 const routes      = require('./routes');
