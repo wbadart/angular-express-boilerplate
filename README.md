@@ -1,5 +1,5 @@
 # Angular Express Boilerplate
-This boilerplate is meant to help you get your MEAN app off the ground fast.  It comes with a robust gulpfile with a series of tasks to make building your app a snap.
+This boilerplate is meant to help you get your MEAN app off the ground fast.  It comes with a robust gulpfile with a series of tasks to make building your app a snap.  Here's a link to MongoDB in case you don't already have it: [https://www.mongodb.com/download-center](https://www.mongodb.com/download-center)
 
 ## Quickstart
 
