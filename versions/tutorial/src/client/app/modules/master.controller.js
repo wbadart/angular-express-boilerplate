@@ -18,6 +18,12 @@ MasterController.$inject = ['$scope', '$filter', '$state'];
 
 function MasterController($scope, $filter, $state){
     let vm = this;
+
+    vm.states = $state.get().reduce((init, state)=>{
+        if(state.name) init.push(state);
+        return init;
+    }, []);
+
     $scope.$on('$stateChangeSuccess', ()=>{
         let title = $state.current.name + ' | My App';
         $('title').html($filter('capitalize')(title));

@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "npm run init && gulp",
-    "init": "node bin/init.js"
+    "init": "node bin/init.js",
+    "clean": "gulp clean && rm -rf src"
   },
   "repository": {
     "type": "git",

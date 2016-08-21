@@ -25,6 +25,12 @@ function AppConfig($urlRouterProvider, $stateProvider){
         controllerAs: 'vm',
         templateUrl: 'app/modules/home/home.template.html'
     })
+    .state('test', {
+        url: '/test',
+        controller: 'TestController',
+        controllerAs: 'vm',
+        templateUrl: 'app/modules/test/test.template.html'
+    })
     ;
 }
 
